@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://clyxo2qdsdcn"]
+
+[ext_resource type="Script" uid="uid://caoyfnqspcn3r" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://bytda40qwamx8" path="res://assets/sprites/player.png" id="2_g2els"]
+[ext_resource type="Shader" uid="uid://de0i67v40f2ds" path="res://shaders/asphyxiation.gdshader" id="3_dqkch"]
+[ext_resource type="Shader" uid="uid://c3kr3615kiuk8" path="res://shaders/vignette.gdshader" id="3_qhqgy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qlg0r"]
+shader = ExtResource("3_dqkch")
+shader_parameter/oxygen = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dqkch"]
+shader = ExtResource("3_qhqgy")
+
+[node name="Player" type="CharacterBody2D" unique_id=135636514]
+script = ExtResource("1_3vyb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1306267009]
+shape = SubResource("CircleShape2D_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1603564602]
+texture = ExtResource("2_g2els")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1784682305]
+position_smoothing_enabled = true
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1906862844]
+material = SubResource("ShaderMaterial_qlg0r")
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=229730259]
+material = SubResource("ShaderMaterial_dqkch")
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0

@@ -1,0 +1,24 @@
+[gd_scene format=4 uid="uid://t2cfr66cewpu"]
+
+[ext_resource type="PackedScene" uid="uid://bujlkftcgp6yw" path="res://scenes/starter_room.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://cc23k38cgx14m" path="res://scenes/rock.tscn" id="2_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://clyxo2qdsdcn" path="res://scenes/player.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://c8oj73ny2ku0j" path="res://scenes/room_2.tscn" id="3_k0juu"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_rwgxs"]
+scenes/1/scene = ExtResource("1_nnsk1")
+scenes/2/scene = ExtResource("2_4wyf3")
+scenes/3/scene = ExtResource("3_k0juu")
+
+[sub_resource type="TileSet" id="TileSet_e5uuo"]
+tile_size = Vector2i(640, 360)
+sources/0 = SubResource("TileSetScenesCollectionSource_rwgxs")
+
+[node name="World" type="Node2D" unique_id=1223087179]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=489166087]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAQD//wAAAAAAAAAAAgD/////AAAAAAAAAgAAAP//AAAAAAAAAgABAP//AAAAAAAAAgABAAAAAAAAAAAAAgACAP3/AAAAAAAAAgAAAAEAAAAAAAAAAwD//wEAAAAAAAAAAgABAAEAAAAAAAAAAgAAAAIAAAAAAAAAAwAAAAMAAAAAAAAAAwAAAAQAAAAAAAAAAwAAAAUAAAAAAAAAAwAAAAYAAAAAAAAAAwAAAAcAAAAAAAAAAwAAAAgAAAAAAAAAAwAAAAkAAAAAAAAAAwD//wIAAAAAAAAAAgD//wMAAAAAAAAAAgD//wQAAAAAAAAAAgD//wUAAAAAAAAAAgD//wYAAAAAAAAAAgD//wcAAAAAAAAAAgD//wgAAAAAAAAAAgD//wkAAAAAAAAAAgABAAIAAAAAAAAAAgABAAMAAAAAAAAAAgABAAQAAAAAAAAAAgABAAUAAAAAAAAAAgABAAYAAAAAAAAAAgABAAcAAAAAAAAAAgABAAgAAAAAAAAAAgABAAkAAAAAAAAAAgA=")
+tile_set = SubResource("TileSet_e5uuo")
+
+[node name="Player" parent="." unique_id=135636514 instance=ExtResource("2_rwgxs")]
+position = Vector2(493, 239)

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bujlkftcgp6yw"]
+
+[ext_resource type="Texture2D" uid="uid://dojmqcriltxg4" path="res://assets/sprites/starter-room.png" id="1_bdgl8"]
+[ext_resource type="Script" uid="uid://oyj5giom7g0g" path="res://scripts/air_pocket.gd" id="2_3dxns"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdgl8"]
+size = Vector2(589, 321)
+
+[node name="StarterRoom" type="StaticBody2D" unique_id=1580052001]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=72953813]
+texture = ExtResource("1_bdgl8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1412900005]
+polygon = PackedVector2Array(-87, 180, -108, 136, -131, 137, -141, 112, -172, 107, -186.27112, 82.284515, -210, 66, -228, 34, -252, 17, -234, 5, -249, -22, -241, -72, -210, -126, -206, -109, -191, -127, -108, -120, -91, -90, -64, -118, 47, -111, 66, -67, 109.29065, -104.97188, 202, -96, 243, -62, 236, -22, 263, 4, 286, 91, 271.7964, 105.5582, 274, 131, 252, 137, 195, 129, 170, 136, 151, 133, 110, 148, 103, 180, 320, 180, 320, -180, -320, -180, -320, 180)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1812520101]
+collision_layer = 2
+script = ExtResource("2_3dxns")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1624907369]
+position = Vector2(7.5, 1.5)
+shape = SubResource("RectangleShape2D_bdgl8")
+
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
