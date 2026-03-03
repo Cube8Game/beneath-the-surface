@@ -13,12 +13,17 @@ var water_momentum = Vector2.ZERO
 
 var underwater_mode = false
 var just_surfaced = false
-var max_speed_override = false
+
+const LIGHT_SWITCH_SPEED = 1.5;
+const LIGHT_SIZE_SURFACE = 0.2
+const LIGHT_SIZE_UNDERWATER = 0.1
+var light_size = LIGHT_SIZE_SURFACE;
 
 var oxygen = 0.0
 var max_oxygen = 30.0
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var color_rect: ColorRect = $ColorRect
 @onready var color_rect_2: ColorRect = $ColorRect2
 
 
@@ -31,6 +36,7 @@ func _physics_process(delta: float) -> void:
 	if input_vector.x != 0.0:
 		sprite_2d.flip_h = input_vector.x < 0.0
 	color_rect_2.material.set_shader_parameter("oxygen", oxygen / max_oxygen)
+	color_rect.material.set_shader_parameter("radius", light_size)
 	move_and_slide()
 
 func movement_overwater(delta, input_vector):
@@ -42,6 +48,8 @@ func movement_overwater(delta, input_vector):
 	water_momentum = velocity
 	
 	oxygen = 0.0
+	
+	light_size = move_toward(light_size, LIGHT_SIZE_SURFACE, (LIGHT_SWITCH_SPEED * abs(light_size - LIGHT_SIZE_SURFACE)) * delta)
 	
 	just_surfaced = false
 
@@ -59,6 +67,8 @@ func movement_underwater(delta, input_vector):
 	oxygen += delta
 	if oxygen >= max_oxygen:
 		get_tree().reload_current_scene()
+	
+	light_size = move_toward(light_size, LIGHT_SIZE_UNDERWATER, (LIGHT_SWITCH_SPEED * abs(light_size - LIGHT_SIZE_UNDERWATER)) * delta)
 	
 	just_surfaced = false
 

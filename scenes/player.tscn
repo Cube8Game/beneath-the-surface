@@ -13,6 +13,7 @@ shader_parameter/oxygen = 0.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dqkch"]
 shader = ExtResource("3_qhqgy")
+shader_parameter/radius = 0.0
 
 [node name="Player" type="CharacterBody2D" unique_id=135636514]
 script = ExtResource("1_3vyb7")

@@ -1,5 +1,8 @@
 shader_type canvas_item;
 
+uniform float radius;
+
+
 void vertex() {
 	// Called for every vertex the material is visible on.
 }
@@ -7,7 +10,7 @@ void vertex() {
 void fragment() {
 	vec2 uv = UV;
 	uv -= 0.5;
-	uv *= 5.0;
+	uv /= radius;
 	float alpha = length(uv);
 	COLOR.rgb = vec3(0.0);
 	COLOR.a = alpha;
