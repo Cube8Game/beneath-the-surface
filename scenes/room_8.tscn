@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://vipp5l3shdyp"]
+
+[ext_resource type="Texture2D" uid="uid://5o3hd0sne7kx" path="res://assets/sprites/room8.png" id="1_b5xdm"]
+[ext_resource type="Script" uid="uid://oyj5giom7g0g" path="res://scripts/air_pocket.gd" id="1_dv16b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aixts"]
+size = Vector2(1298, 406)
+
+[node name="Room8" type="StaticBody2D" unique_id=1580052001]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1904445588]
+collision_layer = 2
+script = ExtResource("1_dv16b")
+winning = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1850217116]
+position = Vector2(-310, -384)
+shape = SubResource("RectangleShape2D_aixts")
+
+[node name="ColorRect" type="ColorRect" parent="Area2D" unique_id=504564654]
+offset_left = -1688.0
+offset_top = -1146.0
+offset_right = 340.0
+offset_bottom = -181.0
+color = Color(0.3647059, 0.6156863, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=72953813]
+position = Vector2(-320, -180)
+texture = ExtResource("1_b5xdm")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1412900005]
+polygon = PackedVector2Array(-312, -198, -344, -201, -384, -210, -406, -221, -448, -233, -488.1471, -234.80348, -509, -249, -591, -259, -701, -267, -732, -291, -779.6073, -283.69193, -793, -316, -794, -330, -794, -443, -960, -256, -960, 180, 320, 180, 320, 106, 250, 129, 225, 127, 165, 117, 106, 102, 53, 97, 5, 101, -24, 86, -88, 79, -106, 61, -145, 38, -184, 0, -194, -40, -227, -91, -226, -137, -235, -153, -254, -176, -267, -180)
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="." unique_id=1839623741]
+polygon = PackedVector2Array(67, -180, 82, -55, 70, -24, 60, 14, 89, 33, 141, 44, 160, 51, 212, 66, 247, 72, 320, 54, 320, -438, 236, -465, 192, -459, 143, -459, 116, -421, 111, -401, 101, -391, 90, -368, 69, -337, 61, -276)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

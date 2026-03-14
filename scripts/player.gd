@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
 
-const WATER_SPEED = 160.0
+const WATER_SPEED = 800.0
 const WATER_ACCELERATION = 240.0
 const WATER_GRAVITY = Vector2(0, 1) * 600
 
-const SURFACE_SPEED = 80.0
+const SURFACE_SPEED = 100.0
 const SURFACE_ACCELERATION = 240.0
 const JUMP_VELOCITY = -140.0
 
@@ -21,6 +21,10 @@ var light_size = LIGHT_SIZE_SURFACE;
 
 var oxygen = 0.0
 var max_oxygen = 30.0
+
+var win = false
+
+var cheat_mode = false
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var color_rect: ColorRect = $ColorRect
@@ -49,7 +53,10 @@ func movement_overwater(delta, input_vector):
 	
 	oxygen = 0.0
 	
-	light_size = move_toward(light_size, LIGHT_SIZE_SURFACE, (LIGHT_SWITCH_SPEED * abs(light_size - LIGHT_SIZE_SURFACE)) * delta)
+	if win:
+		light_size += delta * 0.2
+	else:
+		light_size = move_toward(light_size, LIGHT_SIZE_SURFACE, (LIGHT_SWITCH_SPEED * abs(light_size - LIGHT_SIZE_SURFACE)) * delta)
 	
 	just_surfaced = false
 
@@ -64,7 +71,8 @@ func movement_underwater(delta, input_vector):
 	if velocity.y > WATER_SPEED:
 		velocity.y = WATER_SPEED
 	
-	oxygen += delta
+	if not cheat_mode:
+		oxygen += delta
 	if oxygen >= max_oxygen:
 		get_tree().reload_current_scene()
 	
@@ -78,3 +86,6 @@ func set_underwater_mode(value):
 	underwater_mode = value
 	if !value:
 		just_surfaced = true
+
+func set_win(value):
+	win = value
