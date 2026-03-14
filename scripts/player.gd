@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const WATER_SPEED = 800.0
+const WATER_SPEED = 80.0
 const WATER_ACCELERATION = 240.0
 const WATER_GRAVITY = Vector2(0, 1) * 600
 
