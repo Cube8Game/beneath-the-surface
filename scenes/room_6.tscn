@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://4mnjg7wmoyd8"]
+
+[ext_resource type="Texture2D" uid="uid://cuha5adjalojv" path="res://assets/sprites/room6.png" id="1_ct5gj"]
+
+[node name="Room6" type="StaticBody2D" unique_id=1580052001]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=72953813]
+texture = ExtResource("1_ct5gj")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1412900005]
+polygon = PackedVector2Array(20, 180, 21, 165, 7, 155, -64, 128, -128, 99, -185, 73, -320, 65, -320, 180)
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="." unique_id=1562266651]
+polygon = PackedVector2Array(-202, -18, -243, -9, -320, -8, -320, -180, 320, -180, 320, 180, 128, 180, 124, 162, 172, 118, 164, 74, 106, 14, 66, 10, -2, -16, -65, -6, -153, -19)

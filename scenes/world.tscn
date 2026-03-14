@@ -4,11 +4,21 @@
 [ext_resource type="PackedScene" uid="uid://cc23k38cgx14m" path="res://scenes/rock.tscn" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://clyxo2qdsdcn" path="res://scenes/player.tscn" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://c8oj73ny2ku0j" path="res://scenes/room_2.tscn" id="3_k0juu"]
+[ext_resource type="PackedScene" uid="uid://dvwjlmpgswcf1" path="res://scenes/room_3.tscn" id="4_71j4m"]
+[ext_resource type="PackedScene" uid="uid://cydan1l044jtl" path="res://scenes/room_4.tscn" id="5_qfnet"]
+[ext_resource type="PackedScene" uid="uid://d0nuqp2fryi7p" path="res://scenes/room_5.tscn" id="6_i7141"]
+[ext_resource type="PackedScene" uid="uid://4mnjg7wmoyd8" path="res://scenes/room_6.tscn" id="7_4mrxx"]
+[ext_resource type="PackedScene" uid="uid://fb7v8vgcsm4q" path="res://scenes/room_7.tscn" id="8_7r4gi"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_rwgxs"]
 scenes/1/scene = ExtResource("1_nnsk1")
 scenes/2/scene = ExtResource("2_4wyf3")
 scenes/3/scene = ExtResource("3_k0juu")
+scenes/4/scene = ExtResource("4_71j4m")
+scenes/5/scene = ExtResource("5_qfnet")
+scenes/6/scene = ExtResource("6_i7141")
+scenes/7/scene = ExtResource("7_4mrxx")
+scenes/8/scene = ExtResource("8_7r4gi")
 
 [sub_resource type="TileSet" id="TileSet_e5uuo"]
 tile_size = Vector2i(640, 360)
@@ -17,7 +27,7 @@ sources/0 = SubResource("TileSetScenesCollectionSource_rwgxs")
 [node name="World" type="Node2D" unique_id=1223087179]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=489166087]
-tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAQD//wAAAAAAAAAAAgD/////AAAAAAAAAgAAAP//AAAAAAAAAgABAP//AAAAAAAAAgABAAAAAAAAAAAAAgACAP3/AAAAAAAAAgAAAAEAAAAAAAAAAwD//wEAAAAAAAAAAgABAAEAAAAAAAAAAgAAAAIAAAAAAAAAAwAAAAMAAAAAAAAAAwAAAAQAAAAAAAAAAwAAAAUAAAAAAAAAAwAAAAYAAAAAAAAAAwAAAAcAAAAAAAAAAwAAAAgAAAAAAAAAAwAAAAkAAAAAAAAAAwD//wIAAAAAAAAAAgD//wMAAAAAAAAAAgD//wQAAAAAAAAAAgD//wUAAAAAAAAAAgD//wYAAAAAAAAAAgD//wcAAAAAAAAAAgD//wgAAAAAAAAAAgD//wkAAAAAAAAAAgABAAIAAAAAAAAAAgABAAMAAAAAAAAAAgABAAQAAAAAAAAAAgABAAUAAAAAAAAAAgABAAYAAAAAAAAAAgABAAcAAAAAAAAAAgABAAgAAAAAAAAAAgABAAkAAAAAAAAAAgA=")
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAQD//wAAAAAAAAAAAgD/////AAAAAAAAAgAAAP//AAAAAAAAAgABAP//AAAAAAAAAgABAAAAAAAAAAAAAgACAP3/AAAAAAAAAgAAAAEAAAAAAAAAAwD//wEAAAAAAAAAAgABAAEAAAAAAAAAAgAAAAIAAAAAAAAAAwAAAAMAAAAAAAAABAD//wIAAAAAAAAAAgD//wMAAAAAAAAAAgD//wQAAAAAAAAAAgABAAIAAAAAAAAAAgABAAMAAAAAAAAAAgAAAAQAAAAAAAAABQD//wUAAAAAAAAAAgAAAAUAAAAAAAAAAgABAAUAAAAAAAAAAgABAAQAAAAAAAAABgACAAQAAAAAAAAABwACAAMAAAAAAAAAAgADAAMAAAAAAAAAAgADAAQAAAAAAAAAAgADAAUAAAAAAAAAAgACAAUAAAAAAAAACAA=")
 tile_set = SubResource("TileSet_e5uuo")
 
 [node name="Player" parent="." unique_id=135636514 instance=ExtResource("2_rwgxs")]

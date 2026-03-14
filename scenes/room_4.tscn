@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cydan1l044jtl"]
+
+[ext_resource type="Script" uid="uid://oyj5giom7g0g" path="res://scripts/air_pocket.gd" id="1_dbpl5"]
+[ext_resource type="Texture2D" uid="uid://hv4dqbs4yqpj" path="res://assets/sprites/room4.png" id="2_ccapj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5d4n5"]
+size = Vector2(91, 149)
+
+[node name="Room4" type="StaticBody2D" unique_id=1580052001]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=903276684]
+collision_layer = 2
+script = ExtResource("1_dbpl5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1293967029]
+position = Vector2(-241.5, -84.5)
+shape = SubResource("RectangleShape2D_5d4n5")
+
+[node name="ColorRect" type="ColorRect" parent="Area2D" unique_id=1916350720]
+offset_left = -287.0
+offset_top = -159.0
+offset_right = -196.0
+offset_bottom = -10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=72953813]
+texture = ExtResource("2_ccapj")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1412900005]
+polygon = PackedVector2Array(320, 180, 320, 65, 267, 117, 244, 121, 209, 109, 146, 130, 113, 120, 16, 131, -55, 136, -122, 124, -217, 121, -234, 105, -272, 87, -273, 20, -268, -7, -279, -22, -272, -64, -285, -86, -276, -99, -239, -114, -213, -77, -196, -10, -176, -67, -116, -131, -85, -145, -87, -180, -320, -180, -320, 180)
+
+[node name="CollisionShape2D2" type="CollisionPolygon2D" parent="." unique_id=1562266651]
+polygon = PackedVector2Array(290, -12, 242, -37, 231, -58, 166, -116, 138, -122, 103, -180, 320, -180, 320, -8)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
