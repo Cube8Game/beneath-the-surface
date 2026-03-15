@@ -61,7 +61,10 @@ func movement_overwater(delta, input_vector):
 	just_surfaced = false
 
 func movement_underwater(delta, input_vector):
-	var normal_input = input_vector.normalized()
+	var normal_input = input_vector
+	if win:
+		normal_input.y = -1.0
+	normal_input = normal_input.normalized()
 	water_momentum = water_momentum.move_toward(normal_input * WATER_SPEED, WATER_ACCELERATION * delta)
 	velocity = water_momentum
 	if not is_on_floor():
