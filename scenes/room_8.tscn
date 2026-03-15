@@ -29,7 +29,6 @@ position = Vector2(-320, -180)
 texture = ExtResource("1_b5xdm")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1412900005]
-visible = false
 polygon = PackedVector2Array(-312, -198, -344, -201, -384, -210, -406, -221, -448, -233, -488.1471, -234.80348, -509, -249, -591, -259, -701, -267, -732, -291, -779.6073, -283.69193, -793, -316, -794, -330, -794, -443, -960, -256, -960, 180, 320, 180, 320, 106, 250, 129, 225, 127, 165, 117, 106, 102, 53, 97, 5, 101, -24, 86, -88, 79, -106, 61, -145, 38, -184, 0, -194, -40, -227, -91, -226, -137, -235, -153, -254, -176, -267, -180)
 
 [node name="CollisionShape2D2" type="CollisionPolygon2D" parent="." unique_id=1839623741]
